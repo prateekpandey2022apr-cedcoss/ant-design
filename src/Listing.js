@@ -69,8 +69,10 @@ const Listing = () => {
           return {
             onClick: (event) => {
               console.log(record);
-              debugger;
-              setPosts(posts.filter((post) => post.id !== record.id));
+              // debugger;
+              if (event.target.tagName === "A") {
+                setPosts(posts.filter((post) => post.id !== record.id));
+              }
             }, // click row
             onDoubleClick: (event) => {}, // double click row
             onContextMenu: (event) => {}, // right button click row
